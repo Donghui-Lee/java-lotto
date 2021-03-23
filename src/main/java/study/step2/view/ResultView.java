@@ -2,6 +2,7 @@ package study.step2.view;
 
 import java.util.List;
 
+import study.step2.domain.Amount;
 import study.step2.domain.Lotto;
 import study.step2.domain.LottoRank;
 import study.step2.domain.LottoWin;
@@ -28,7 +29,7 @@ public class ResultView {
         }
     }
 
-    public static void printProfit(int payment, LottoWin lottoWin) {
-        System.out.println("총 수익률은 " +  String.format("%.2f", ((double) lottoWin.sum() / payment)) + "입니다.");
+    public static void printProfit(Amount amount, LottoWin lottoWin) {
+        System.out.println("총 수익률은 " +  String.format("%.2f", ((double) lottoWin.sum() / amount.getAmount())) + "입니다.");
     }
 }

@@ -17,4 +17,8 @@ public class Amount {
             throw new IllegalArgumentException("유효하지 않는 금액입니다.");
         }
     }
+
+    public int divide(int lottoPrice) {
+        return this.amount/lottoPrice;
+    }
 }
