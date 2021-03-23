@@ -1,6 +1,7 @@
 package study.step2.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -17,13 +18,13 @@ public class Lotto {
         }
     }
 
-    public List<LottoNumber> getLottoNumbers() {
-        return new ArrayList<>(lottoNumbers);
-    }
-
     public int match(List<LottoNumber> winInput) {
         int matchCount = lottoNumbers.stream()
             .mapToInt(number -> winInput.contains(number) ? 1 : 0).sum();
         return matchCount;
+    }
+
+    public List<LottoNumber> getLottoNumbers() {
+        return Collections.unmodifiableList(new ArrayList<>(lottoNumbers));
     }
 }
