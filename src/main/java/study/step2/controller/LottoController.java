@@ -22,6 +22,6 @@ public class LottoController {
 
         LottoWin lottoWin = lottos.result(new Lotto(InputView.inputWinNumber()));
         ResultView.printResult(lottoWin);
-        ResultView.printProfit(amount, lottoWin);
+        ResultView.printProfit(lottoWin.profit(amount));
     }
 }

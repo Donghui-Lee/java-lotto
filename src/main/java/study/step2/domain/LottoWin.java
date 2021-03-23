@@ -1,5 +1,6 @@
 package study.step2.domain;
 
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -31,5 +32,9 @@ public class LottoWin {
             sum += multiple;
         }
         return sum;
+    }
+
+    public BigDecimal profit(Amount amount) {
+        return BigDecimal.valueOf(sum() / amount.getAmount(), 2);
     }
 }
