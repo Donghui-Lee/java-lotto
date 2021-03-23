@@ -1,6 +1,7 @@
 package study.step2.domain;
 
 public class Amount {
+    private final static int MIN_AMOUNT = 1000;
     private final int amount;
 
     public Amount(int amount) {
@@ -13,7 +14,7 @@ public class Amount {
     }
 
     private void valid(int amount) {
-        if(amount < 0) {
+        if(amount < MIN_AMOUNT) {
             throw new IllegalArgumentException("유효하지 않는 금액입니다.");
         }
     }
